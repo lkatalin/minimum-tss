@@ -6,7 +6,7 @@ use tss_esapi::{
     constants::session_type::SessionType,
     handles::AuthHandle,
     interface_types::{
-        algorithm::{AsymmetricAlgorithm, HashingAlgorithm, SignatureScheme},
+        algorithm::{AsymmetricAlgorithm, HashingAlgorithm, SignatureSchemeAlgorithm},
         session_handles::AuthSession,
     },
     tcti_ldr::TctiNameConf,
@@ -42,7 +42,7 @@ fn main() {
         &mut context,
         ek_rsa,
         HashingAlgorithm::Sha256,
-        SignatureScheme::RsaSsa, // changed from RsaPsa
+        SignatureSchemeAlgorithm::RsaSsa, // changed from RsaPsa
         None, // changed from Some(&ak_auth)
         DefaultKey,
     )
